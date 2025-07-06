@@ -1,21 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Video Speed Scrubber</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .wrapper {
+      max-width: 765px;
+      margin: 20px auto;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .progress {
+      background: #eee;
+      flex: 1;
+      height: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress__filled {
+      width: 0;
+      background: #f00;
+      height: 100%;
+      transition: width 0.1s;
+    }
+
+    .speed {
+      margin-top: 10px;
+      text-align: center;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .speed-bar {
+      background: #ccc;
+      width: 100%;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
 
   <div class="wrapper">
-    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" controls></video>
+    <div class="player">
+      <video
+        class="viewer"
+        width="765"
+        height="430"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+      ></video>
+
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+
+      <div class="controls">
+        <button class="player__button toggle">►</button>
+        <button data-skip="-10">« 10s</button>
+        <button data-skip="25">25s »</button>
+        <label>
+          Volume
+          <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.75" />
+        </label>
+        <label>
+          Speed
+          <input type="range" name="playbackRate" class="playbackSpeed" min="0.5" max="2" step="0.1" value="1" />
+        </label>
+      </div>
+    </div>
+
     <div class="speed">
       <div class="speed-bar">1×</div>
     </div>
   </div>
 
-<script  src="./script.js">
-  //Your code goes here
-</script>
+  <script src="./script.js"></script>
 </body>
 </html>
