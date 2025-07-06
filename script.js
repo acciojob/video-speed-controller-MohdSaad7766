@@ -8,7 +8,11 @@ const progressFilled = player.querySelector('.progress__filled');
 
 // Toggle play/pause
 function togglePlay() {
-  video[video.paused ? 'play' : 'pause']();
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
 }
 
 // Update play/pause icon

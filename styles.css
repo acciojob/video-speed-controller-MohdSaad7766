@@ -1,2 +1,46 @@
+.player {
+  max-width: 750px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  background: #eee;
+  font-family: sans-serif;
+}
 
-/* Your CSS Code here. */
+.player__video {
+  width: 100%;
+  display: block;
+}
+
+.player__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  background: #ddd;
+}
+
+.player__button {
+  font-size: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.progress {
+  flex: 1;
+  height: 5px;
+  background: #999;
+  margin: 5px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress__filled {
+  background: #6a0dad;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+input[type="range"] {
+  margin: 0 5px;
+}
